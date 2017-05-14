@@ -1,0 +1,33 @@
+{
+  "name": "muxi-resume",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "stephenliu <stephenlyao@yeah.net>",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon -w app.js -w nuxt.config.js --exec babel-node app.js",
+    "build": "nuxt build && babel app.js --out-file app.prod.js",
+    "start": "cross-env NODE_ENV=production node app.prod.js",
+    "precommit": "npm run lint",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  },
+  "babel": {
+    "plugins": "transform-async-to-generator"
+  },
+  "dependencies": {
+    "cross-env": "^3.1.4",
+    "koa": "^2.0.0",
+    "nuxt": "latest"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.13.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-html": "^1.7.0",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "nodemon": "^1.11.0",
+    "scmp": "^2.0.0"
+  }
+}
