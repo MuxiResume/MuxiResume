@@ -14,6 +14,8 @@
   "dependencies": {
     "cross-env": "^5.0.0",
     "koa": "^2.0.0",
+    "koa-convert": "^1.2.0",
+    "koa-router": "^7.2.0",
     "nuxt": "~1.0.0-alpha1",
     "source-map-support": "^0.4.15"
   },
