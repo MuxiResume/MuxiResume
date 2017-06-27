@@ -1,21 +1,27 @@
 # muxi-resume
 
-> A Vue.js project
+> Nuxt.js project
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+$ npm install # Or yarn install*[see note below]
 
-# serve with hot reload at localhost:8080
-npm run dev
+# serve with hot reload at localhost:3000
+$ npm run dev
 
-# build for production with minification
-npm run build
+# build for production and launch server
+$ npm run build
+$ npm start
 
-# build for production and view the bundle analyzer report
-npm run build --report
+# generate static project
+$ npm run generate
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+*Note: Due to a bug in yarn's engine version detection code if you are
+using a prerelease version of Node (i.e. v7.6.0-rc.1) you will need to either:
+  1. Use `npm install`
+  2. Run `yarn` with a standard release of Node and then switch back
+
+For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
