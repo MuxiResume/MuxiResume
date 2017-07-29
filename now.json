@@ -1,0 +1,4 @@
+{
+  "name": "muxi-resume",
+  "env": ".prod.env"
+}
