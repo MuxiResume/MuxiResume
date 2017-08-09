@@ -6,6 +6,7 @@ require('dotenv').config({
 })
 
 module.exports = {
+  srcDir: path.resolve(__dirname, 'src', 'client'),
   build: {
     vendor: ['vuetify', 'jwt-decode', 'axios']
   },
@@ -49,6 +50,5 @@ module.exports = {
   },
   router: {
     middleware: ['ssr-cookie', 'https']
-  },
-  srcDir: path.resolve(__dirname, 'src', 'client')
+  }
 }
