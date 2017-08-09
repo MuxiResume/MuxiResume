@@ -4,7 +4,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import Nuxt from 'nuxt'
 
-import config from '../../nuxt.config'
+import config from '../../nuxt.config.js'
 import apiRoutes from './api'
 
 const app = express()
