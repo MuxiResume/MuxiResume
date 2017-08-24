@@ -1,7 +1,7 @@
 {
   "name": "muxi-resume",
   "version": "0.0.1",
-  "description": "A online cloud resume generation tool",
+  "description": "A Vueniverse project",
   "author": "stephenliu <stephenlyao@yeah.net>",
   "private": true,
   "scripts": {
@@ -12,6 +12,7 @@
     "stop": "run-p stop-*",
     "deploy": "node ./scripts/deploy.js",
     "create-admin": "node ./scripts/create-admin.js",
+    "git": "run-s git-*",
     "start-app": "pm2 start ./dist/server/main.js -i max",
     "stop-app": "pm2 delete all",
     "start-db": "mongod --fork --dbpath ./db/data --logpath ./db/logs/mongodb.log",
@@ -20,7 +21,9 @@
     "build-client": "nuxt build",
     "clean": "rimraf ./db",
     "precommit": "run-s lint",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "git-pull": "git pull",
+    "git-push": "git add . && git commit -m 'General Update' && git push -u origin master"
   },
   "dependencies": {
     "@nuxtjs/component-cache": "^0.1.5",
@@ -50,7 +53,9 @@
     "speakeasy": "^2.0.0",
     "uuid": "^3.0.1",
     "validator": "^7.2.0",
-    "vuetify": "^0.12.7"
+    "vue-router": "^2.5.3",
+    "vuetify": "^0.12.7",
+    "vuex": "^2.3.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

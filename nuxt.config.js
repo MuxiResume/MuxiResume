@@ -6,7 +6,6 @@ require('dotenv').config({
 })
 
 module.exports = {
-  srcDir: path.resolve(__dirname, 'src', 'client'),
   build: {
     vendor: ['vuetify', 'jwt-decode', 'axios']
   },
@@ -30,7 +29,7 @@ module.exports = {
   },
   manifest: {
     name: 'muxi-resume',
-    description: 'A online cloud resume generation tool',
+    description: 'A Vueniverse project',
     theme_color: '#188269'
   },
   modules: [
@@ -50,5 +49,6 @@ module.exports = {
   },
   router: {
     middleware: ['ssr-cookie', 'https']
-  }
+  },
+  srcDir: path.resolve(__dirname, 'src', 'client')
 }

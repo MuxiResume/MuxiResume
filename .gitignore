@@ -3,8 +3,8 @@ dist
 node_modules
 secrets.json
 db
-*.log
 
 static/manifest*.json
 static/sw.js
 static/workbox-sw*.js
+demo/dump.rdb
