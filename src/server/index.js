@@ -41,7 +41,7 @@ app.use(nuxt.render)
 mongoose.Promise = global.Promise
 mongoose.connect(process.env.DB_URL)
 
-app.listen(process.env.PORT, process.env.HOST, err => {
+app.listen(process.env.PORT, process.env.HOST, () => {
   console.log(`Server listening on http://${process.env.HOST}:${process.env.PORT}`)
 })
 
