@@ -4215,6 +4215,10 @@ normalize-url@^1.4.0:
     query-string "^4.1.0"
     sort-keys "^1.0.0"
 
+normalize.css@^7.0.0:
+  version "7.0.0"
+  resolved "http://registry.npm.taobao.org/normalize.css/download/normalize.css-7.0.0.tgz#abfb1dd82470674e0322b53ceb1aaf412938e4bf"
+
 now-client@^1.1.1:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/now-client/download/now-client-1.1.1.tgz#3d15e750245d9496965d2dc4b52bebf855266bab"

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import homeBackground from '~/assets/img/home_background.png'
+import homeBackground from '~/assets/img/home/home_background.png'
 export default {
   data() {
     return {

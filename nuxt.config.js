@@ -11,7 +11,10 @@ module.exports = {
   },
   buildDir: 'dist/client',
   cache: true,
-  css: [{ src: '~assets/style/app.styl', lang: 'styl' }],
+  css: [
+    'normalize.css',
+    { src: '~assets/style/app.styl', lang: 'styl' }
+  ],
   env: {
     HOST: process.env.HOST,
     PORT: process.env.PORT
@@ -21,7 +24,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'A online resume generation tool' }
     ],
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }

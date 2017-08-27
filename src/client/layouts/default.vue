@@ -113,7 +113,7 @@
 // </template>
 
 <template>
-  <header></header>
+  <nav-bar></nav-bar>
   <main>
     <v-container fluid>
       <nuxt></nuxt>
@@ -124,11 +124,11 @@
 
 <script>
 // search icons: https://material.io/icons/ asd
-import Header from '~/components/header'
+import NavBar from '~/components/navBar'
 export default {
   data () {
     return {}
   },
-  components: { Header }
+  components: { NavBar }
 }
 </script>

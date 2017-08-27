@@ -1,7 +1,7 @@
 {
   "name": "muxi-resume",
   "version": "0.0.1",
-  "description": "A Vueniverse project",
+  "description": "A online resume generation tool",
   "author": "stephenliu <stephenlyao@yeah.net>",
   "private": true,
   "scripts": {
@@ -46,6 +46,7 @@
     "jwt-decode": "^2.2.0",
     "mongodb": "^2.2.28",
     "mongoose": "^4.10.5",
+    "normalize.css": "^7.0.0",
     "npm-run-all": "^4.0.2",
     "nuxt": "^1.0.0-alpha.4",
     "pm2": "^2.5.0",
