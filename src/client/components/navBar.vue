@@ -64,8 +64,6 @@ export default {
   line-height: 42px
   height: 42px
   padding: 0px 15px
-  position: fixed
-  width: 100%
   .logo
     position: absolute
     z-index: 1
@@ -78,11 +76,20 @@ export default {
       height: 100%
   .menu
     margin-left: 65px
+    display: inline-block
     a
       margin: 0 4px
     .nuxt-link-active
       color: #FFFFFF
   .auth
     float: right
-
+    color: $text-color
+    span
+      padding: 0 10px
+      cursor: pointer
+      &:hover
+        color: #FFFFFF
+      &:nth-child(2)
+        border-right: 1px solid $text-color
+     
 </style>
