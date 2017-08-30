@@ -15,7 +15,7 @@
       </router-link>
     </div>
     <div class="auth">
-      <span class="searchBox"></span>
+      <search-box class="search" position="header"></search-box>
       <template v-if="$store.state.user.isAuthenticated">
       </template>
       <template v-else>
@@ -29,6 +29,7 @@
 
 <script>
 import signForm from '~/components/signForm.vue'
+import searchBox from '~/components/searchBox.vue'
 
 export default {
   name: 'nav-bar',
@@ -39,7 +40,8 @@ export default {
     }
   },
   components: {
-    signForm
+    signForm,
+    searchBox
   },
   methods: {
     showSignIn: function() {
@@ -91,5 +93,6 @@ export default {
         color: #FFFFFF
       &:nth-child(2)
         border-right: 1px solid $text-color
-     
+  .search
+    right: 107px
 </style>
