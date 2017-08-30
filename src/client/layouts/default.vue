@@ -113,12 +113,10 @@
 // </template>
 
 <template>
-  <nav-bar></nav-bar>
-  <main>
-    <v-container fluid>
-      <nuxt></nuxt>
-    </v-container>
-  </main>
+  <div>
+    <nav-bar></nav-bar>
+    <nuxt></nuxt>
+  </div>
 </template>
 
 

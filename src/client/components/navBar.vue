@@ -66,6 +66,8 @@ export default {
   line-height: 42px
   height: 42px
   padding: 0px 15px
+  position: relative
+  z-index: 100
   .logo
     position: absolute
     z-index: 1
