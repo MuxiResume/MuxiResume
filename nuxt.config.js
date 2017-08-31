@@ -23,7 +23,7 @@ module.exports = {
     title: 'muxi-resume',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no' },
       { hid: 'description', name: 'description', content: 'A online resume generation tool' }
     ],
     link: [

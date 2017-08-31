@@ -71,8 +71,8 @@ export default {
   .logo
     position: absolute
     z-index: 1
-    width: 32px
-    height: 51px
+    width: 48px
+    height: 67px
     background: $main-background
     padding: 8px
     img
@@ -83,6 +83,9 @@ export default {
     display: inline-block
     a
       margin: 0 4px
+      color: #A6A6A6
+      &:hover
+        color: #FFFFFF
     .nuxt-link-active
       color: #FFFFFF
   .auth
