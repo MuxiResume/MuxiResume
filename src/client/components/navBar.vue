@@ -10,7 +10,7 @@
       <router-link to="/edit">
         在线制作
       </router-link>
-      <router-link to="/lists">
+      <router-link to="/templates">
         模版商城
       </router-link>
     </div>
