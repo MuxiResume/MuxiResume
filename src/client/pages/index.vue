@@ -33,10 +33,10 @@
         </v-flex>
       </v-layout>
       <v-layout class="banner-share">
-        <v-flex xs5>
+        <v-flex xs6>
           <img src="~assets/img/home/link.png" alt="resume" />
         </v-flex>
-        <v-flex xs5 offset-xs1>
+        <v-flex xs6 offset-xs1>
           <img src="~assets/img/home/social.png" alt="resume" />
         </v-flex>
       </v-layout>
