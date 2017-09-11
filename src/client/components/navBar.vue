@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import signForm from '~/components/signForm.vue'
+import signForm from '~/components/auth/signForm.vue'
 import searchBox from '~/components/searchBox.vue'
 
 export default {

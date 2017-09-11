@@ -1,6 +1,5 @@
 <template>
-  <v-card class="grey lighten-4 elevation-3">
-    <v-container fluid>
+  <div class="container">
       <form @keyup.enter="submit">
         <v-text-field
           v-model="username"
@@ -13,10 +12,9 @@
           label="password"
           type="password"
         ></v-text-field>
-        <v-btn @click.native="submit">Submit</v-btn>
+        <button @click.native="submit">Submit</button>
       </form>
-    </v-container>
-  </v-card>
+  </div>
 </template>
 
 <script>
@@ -44,3 +42,8 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+.container
+  position: absolute
+</style>
