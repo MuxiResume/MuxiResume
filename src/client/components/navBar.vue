@@ -20,8 +20,8 @@
       </template>
       <template v-else>
         <span @click="showSignIn">登录</span>
-        <span @click="showSignUp">注册</span>
-        <sign-form v-show="show" @closeSignForm="closeSignForm" mold="mold"></sign-form>
+        <span @click="showSignUp">注册</span> 
+        <sign-form v-show="show" @closeSignForm="closeSignForm" :mold="mold"></sign-form>
       </template>
     </div>
   </div>
@@ -45,12 +45,12 @@ export default {
   },
   methods: {
     showSignIn: function() {
-      this.show = true
       this.mold = 'signIn'
+      this.show = true
     },
     showSignUp: function() {
-      this.show = true
       this.mold = 'signUp'
+      this.show = true
     },
     closeSignForm: function() {
       this.show = false

@@ -1,25 +1,32 @@
 <template>
   <div class="container">
-      <form @keyup.enter="submit">
-        <v-text-field
-          v-model="username"
-          name="username"
-          label="username"
-        ></v-text-field>
-        <v-text-field
-          v-model="password"
-          name="password"
-          label="password"
-          type="password"
-        ></v-text-field>
-        <button @click.native="submit">Submit</button>
-      </form>
+    <div class="header"></div>
+    <form @keyup.enter="submit">
+      <input
+        v-model="username"
+        name="username"
+        label="username"
+      ></input>
+      <input
+        v-model="password"
+        name="password"
+        label="password"
+        type="password"
+      ></input>
+      <button @click.native="submit">Submit</button>
+    </form>
   </div>
 </template>
 
 <script>
 export default {
-  props: [ 'redirect' ],
+  name: 'sign-form',
+  props: {
+    mold: {
+      type: String,
+      default: 'signIn'
+    }
+  },
   data () {
     return {
       username: '',
@@ -46,4 +53,11 @@ export default {
 <style lang="stylus" scoped>
 .container
   position: absolute
+  left: 50vw
+  top: 50vh
+  transform: translate(-50%, -50%)
+  width: 441px
+  height: 296px
+  background-color: #ffffff
+  z-index: 100 
 </style>
