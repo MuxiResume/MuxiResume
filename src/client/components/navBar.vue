@@ -21,7 +21,7 @@
       <template v-else>
         <span @click="showSignIn">登录</span>
         <span @click="showSignUp">注册</span> 
-        <sign-form v-show="show" @closeSignForm="closeSignForm" :mold="mold"></sign-form>
+        <sign-form v-show="show" @showSignUp="showSignUp" @showSignIn="showSignIn" @closeSignForm="closeSignForm" :mold="mold"></sign-form>
       </template>
     </div>
   </div>
@@ -44,15 +44,15 @@ export default {
     searchBox
   },
   methods: {
-    showSignIn: function() {
+    showSignIn() {
       this.mold = 'signIn'
       this.show = true
     },
-    showSignUp: function() {
+    showSignUp() {
       this.mold = 'signUp'
       this.show = true
     },
-    closeSignForm: function() {
+    closeSignForm() {
       this.show = false
     }
   }

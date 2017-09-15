@@ -44,10 +44,11 @@ export default {
       border: 0
       transition: width 0.5s ease-in-out
       background-color: transparent
-      margin-right: -20px    
+      margin-right: 5px    
     .header
       input[type=search]
         width: 0px
         &.showInput
           width: 116px
+          padding: 0 5px
 </style>
