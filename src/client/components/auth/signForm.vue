@@ -16,11 +16,14 @@
           ></input>
           <input
             v-model="password"
+            ref="input"
             name="password"
             label="password"
             type="password"
             placeholder="密码: "
           ></input>
+          <span class="showPassword" @click="togglePassword"></span>
+          <router-link to="/" class="forget">忘记密码?</router-link>
           <button @click.native="submit" class="submit">登录</button>
         </form>
       </template>
@@ -32,19 +35,21 @@
         </div>
         <form @keyup.enter="submit">
           <input
-            v-model="username"
+            v-model="username"  
             name="username"
             label="username"
             placeholder="邮箱: "
           ></input>
           <input
             v-model="password"
+            ref="input"
             name="password"
             label="password"
             type="password"
             placeholder="密码: "
           ></input>
-          <button @click.native="submit" class="submit">注册</button>
+          <span class="showPassword"></span>
+          <button @click.native="submit" class="submit" style="margin: 27px 0;">注册</button>
         </form>
       </template>
     </div>
@@ -65,6 +70,7 @@ export default {
     return {
       username: '',
       password: '',
+      showPassword: false
     }
   },
   methods: {
@@ -75,19 +81,33 @@ export default {
       }).then(() => {
         if (this.$store.state.notification.success) this.$router.replace(this.redirect)
         else {
-          this.username = ''
-          this.password = ''
+          this.reset()
         }
       })
     },
     closeSignForm() {
       this.$emit('closeSignForm')
+      this.reset()
     },
     showSignUp() {
       this.$emit('showSignUp')
+      this.reset()
     },
     showSignIn() {
       this.$emit('showSignIn')
+      this.reset()
+    },
+    togglePassword() {
+      this.showPassword = !this.showPassword
+      if (this.showPassword) {
+        this.$refs.input.setAttribute('type', 'text')
+      } else {
+        this.$refs.input.setAttribute('type', 'password')
+      }
+    },
+    reset() {
+      this.username = ''
+      this.password = ''
     }
   }
 }
@@ -145,6 +165,7 @@ export default {
       padding: 9px 13px
       max-height: 37px
       float: left
+      color: #000
       &:nth-child(2)
         border-top: none
       &:focus
@@ -152,14 +173,26 @@ export default {
       &::placeholder
         font-size: 14px
         color: #BDBDBD
+    .forget
+      float: right
+    .showPassword
+      position: absolute
+      width: 17px
+      height: 8px
+      background: url('~/assets/img/popup/showPass.svg') no-repeat
+      background-size: 100%
+      right: 30px
+      top: 138px
+      cursor: pointer
     .submit
       width: 100%
-      border: 1px solid #d2d2d2
       border-radius: 0
-      margin: 27px 0
+      margin: 0
       font-size: 20px
       color: #ffffff
       background-color: #5087EE
+      &:hover
+        background-color: #4474CF
 
 .mask
   position: fixed
