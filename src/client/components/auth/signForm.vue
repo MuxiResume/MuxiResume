@@ -1,31 +1,52 @@
 <template>
   <div>
     <div class="auth-container">
-      <div class="header">
-        <template v-if="mold === 'signIn'">
-          <span class="back" @click="showSignUp">注册</span>
-          <span class="title">登录</span>
-        </template>
-        <template v-else>
-          <span class="back" @click="showSignIn">登录</span>
-          <span class="title">注册</span>
-        </template>
-        <span class="cancel"></span>
-      </div>
-      <form @keyup.enter="submit">
-        <input
-          v-model="username"
-          name="username"
-          label="username"
-        ></input>
-        <input
-          v-model="password"
-          name="password"
-          label="password"
-          type="password"
-        ></input>
-        <button @click.native="submit">Submit</button>
-      </form>
+      <template v-if="mold === 'signIn'">
+        <div class="header">
+            <span class="back" @click="showSignUp">注册</span>
+            <span class="title">登录</span>
+          <span class="cancel"></span>
+        </div>
+        <form @keyup.enter="submit">
+          <input
+            v-model="username"
+            name="username"
+            label="username"
+            placeholder="邮箱: "
+          ></input>
+          <input
+            v-model="password"
+            name="password"
+            label="password"
+            type="password"
+            placeholder="密码: "
+          ></input>
+          <button @click.native="submit" class="submit">登录</button>
+        </form>
+      </template>
+      <template v-else>
+        <div class="header">       
+            <span class="back" @click="showSignIn">登录</span>
+            <span class="title">注册</span>        
+          <span class="cancel"></span>
+        </div>
+        <form @keyup.enter="submit">
+          <input
+            v-model="username"
+            name="username"
+            label="username"
+            placeholder="邮箱: "
+          ></input>
+          <input
+            v-model="password"
+            name="password"
+            label="password"
+            type="password"
+            placeholder="密码: "
+          ></input>
+          <button @click.native="submit" class="submit">注册</button>
+        </form>
+      </template>
     </div>
     <div class="mask" @click="closeSignForm"></div>
   </div>
@@ -79,7 +100,7 @@ export default {
   top: 50vh
   transform: translate(-50%, -50%)
   width: 441px
-  height: 296px
+  height: 259px
   background-color: #ffffff
   z-index: 100
   border-radius: 2px
@@ -116,9 +137,30 @@ export default {
         top: 50%
         left: 10px
         transform: translateY(-50%)
-
   form
     padding: 23px 16px
+    input
+      border: 1px solid #d2d2d2
+      width: 100%
+      padding: 9px 13px
+      max-height: 37px
+      float: left
+      &:nth-child(2)
+        border-top: none
+      &:focus
+        outline: 2px solid #5087EE
+      &::placeholder
+        font-size: 14px
+        color: #BDBDBD
+    .submit
+      width: 100%
+      border: 1px solid #d2d2d2
+      border-radius: 0
+      margin: 27px 0
+      font-size: 20px
+      color: #ffffff
+      background-color: #5087EE
+
 .mask
   position: fixed
   width: 100%
