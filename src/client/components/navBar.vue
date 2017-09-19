@@ -20,8 +20,10 @@
       </template>
       <template v-else>
         <span @click="showSignIn">登录</span>
-        <span @click="showSignUp">注册</span> 
-        <sign-form v-show="show" @showSignUp="showSignUp" @showSignIn="showSignIn" @closeSignForm="closeSignForm" :mold="mold"></sign-form>
+        <span @click="showSignUp">注册</span>
+        <transition name="page">
+          <sign-form v-show="show" @showSignUp="showSignUp" @showSignIn="showSignIn" @closeSignForm="closeSignForm" :mold="mold"></sign-form>
+        </transition>
       </template>
     </div>
   </div>

@@ -54,8 +54,8 @@
     "source-map-support": "^0.4.15",
     "speakeasy": "^2.0.0",
     "uuid": "^3.0.1",
-    "validator": "^7.2.0",
     "vue-router": "^2.5.3",
+    "vue-validator": "^3.0.0-alpha.2",
     "vuetify": "^0.12.7",
     "vuex": "^2.3.1"
   },
