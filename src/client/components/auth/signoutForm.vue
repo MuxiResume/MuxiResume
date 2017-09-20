@@ -4,6 +4,7 @@
 
 <script>
 export default {
+  name: 'sign-out-form',
   props: [ 'redirect' ],
   methods: {
     signOut () {

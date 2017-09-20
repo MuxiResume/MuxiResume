@@ -33,25 +33,26 @@
         </v-flex>
       </v-layout>
       <v-layout class="banner-share">
-        <v-flex xs6>
+        <v-flex xs5>
           <img src="~assets/img/home/link.png" alt="resume" />
         </v-flex>
-        <v-flex xs6 offset-xs1>
+        <v-flex xs5 offset-xs2>
           <img src="~assets/img/home/social.png" alt="resume" />
         </v-flex>
       </v-layout>
     </v-container>
-    <footer></footer>
+    <footer-bar></footer-bar>
   </div>
 </template>
 
 <script>
-import Footer from '~/components/footer'
+import FooterBar from '~/components/footerBar'
 export default {
+  name: 'home',
   data() {
     return {}
   },
-  components: { Footer }
+  components: { FooterBar }
 }
 </script>
 
