@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import navBar from '~/components/navBar'
-import searchBox from '~/components/searchBox'
+import navBar from '~/components/nav-bar'
+import searchBox from '~/components/search-box'
 
 export default {
   name: 'footer',

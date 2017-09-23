@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import FooterBar from '~/components/footerBar'
+import FooterBar from '~/components/footer-bar'
 export default {
   name: 'template',
   components: { FooterBar }

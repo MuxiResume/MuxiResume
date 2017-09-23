@@ -17,46 +17,26 @@
     <div class="auth">
       <search-box class="search" position="header"></search-box>
       <template v-if="$store.state.user.isAuthenticated">
+        <router-link to="/users/"> 个人中心 </router-link>
       </template>
       <template v-else>
-        <span @click="showSignIn">登录</span>
-        <span @click="showSignUp">注册</span>
-        <transition name="page">
-          <sign-form v-show="show" @showSignUp="showSignUp" @showSignIn="showSignIn" @closeSignForm="closeSignForm" :mold="mold"></sign-form>
-        </transition>
+        <router-link to="/users/auth/sign-in">登录</router-link>
+        <router-link to="/users/auth/sign-up">注册</router-link>
       </template>
     </div>
   </div>
 </template>
 
 <script>
-import signForm from '~/components/auth/signForm.vue'
-import searchBox from '~/components/searchBox.vue'
+import searchBox from '~/components/search-box.vue'
 
 export default {
   name: 'nav-bar',
   data() {
-    return {
-      show: false,
-      mold: null
-    }
+    return {}
   },
   components: {
-    signForm,
     searchBox
-  },
-  methods: {
-    showSignIn() {
-      this.mold = 'signIn'
-      this.show = true
-    },
-    showSignUp() {
-      this.mold = 'signUp'
-      this.show = true
-    },
-    closeSignForm() {
-      this.show = false
-    }
   }
 }
 </script>
@@ -93,9 +73,10 @@ export default {
   .auth
     float: right
     color: $text-color
-    span
+    a
       padding: 0 10px
       cursor: pointer
+      color: #A6A6A6
       &:hover
         color: #FFFFFF
       &:nth-child(2)
