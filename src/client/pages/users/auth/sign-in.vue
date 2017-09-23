@@ -1,14 +1,8 @@
 <template>
-  <v-container>
-    <v-layout justify-center align-center>
-      <v-flex xs12 sm10 md8 lg6 xl6>
-        <h3>Sign In</h3>
-        <sign-in-form :redirect="redirect"></sign-in-form>
-        <br>
-        <p>Don't have an account? <nuxt-link :to="{ name: 'users-auth-sign-up' }">Sign up!</nuxt-link></p>
-      </v-flex>
-    </v-layout>
-  </v-container>
+  <div class="sign-container">
+    <div class="logo"></div>
+    <sign-in-form :redirect="redirect"></sign-in-form>
+  </div>
 </template>
 
 <script>
@@ -22,3 +16,23 @@ export default {
   }
 }
 </script>
+
+
+<style lang="stylus" scoped>
+.sign-container
+  background: url('~/assets/img/auth_background.png') no-repeat
+  background-size: 100% 100%
+  width: 100vw
+  height: 100vh
+  margin-top: -42px
+  .logo
+    background: url('~/assets/img/logo_auth.png') no-repeat
+    background-size: 100% 100%
+    width: 74px
+    height: 108px
+    position: absolute
+    top: 80px
+    left: 0
+    right: 0
+    margin: auto
+</style>

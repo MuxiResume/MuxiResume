@@ -1,10 +1,6 @@
 <template>
   <div class="auth-container">
-    <div class="header">
-        <span class="back" @click="showSignUp">注册</span>
-        <span class="title">登录</span>
-      <span class="cancel" @click="closeSignForm"></span>
-    </div>
+    <div class="title">登录</div>
     <form @keyup.enter="submit">
       <input
         v-model="email"
@@ -24,8 +20,9 @@
         required
       ></input>
       <span class="showPassword" @click="togglePassword"></span>
-      <router-link to="/" class="forget">忘记密码?</router-link>
       <button @click.native="submit" class="submit">登录</button>
+      <router-link to="/users/auth/sign-up">注册</router-link>
+      <router-link to="/" class="forget">忘记密码?</router-link>
     </form>
   </div>
 </template>
@@ -66,63 +63,22 @@ export default {
 
 <style lang="stylus" scoped>
 .auth-container
-  position: fixed
   left: 50vw
   top: 50vh
   transform: translate(-50%, -50%)
-  width: 441px
-  height: 259px
+  width: 340px
+  height: 315px
   background-color: #ffffff
-  z-index: 100
   border-radius: 2px
-  box-shadow: 0 2px 5px #00000050
-  .header
-    width: 100%
-    height: 64px
-    line-height: 64px
-    color: #ffffff
-    background-color: #5087EE
-    border-radius: 2px 2px 0 0
+  box-shadow: 2px 2px 2px rgba(0,0,0,.08)
+  position: absolute
+  .title
     text-align: center
-    position: relative
-    span
-      vertical-align: middle
-    .back
-      min-width: 64px
-      background-color: #4474CF
-      border-radius: 50px
-      line-height: 27px
-      left: 20px
-      top: 50%
-      transform: translateY(-50%)
-      cursor: pointer
-      position: absolute
-      &:before
-        content: ''
-        width: 0
-        height: 0
-        border-right: 4px solid #fff
-        border-top: 4px solid transparent
-        border-bottom: 4px solid transparent
-        position: absolute
-        top: 50%
-        left: 10px
-        transform: translateY(-50%)
-    .cancel
-      background: url('~/assets/img/popup/close.svg') no-repeat
-      padding: 12px
-      background-size: 9px
-      background-position: 7px
-      position: absolute
-      border-radius: 50%
-      background-color: #4474CF
-      color: #fff
-      right: 10px
-      top: 50%
-      transform: translateY(-50%)
-      cursor: pointer
+    margin: 35px 0
+    color: #474653
+    font-size: 18px
   form
-    padding: 23px 16px
+    padding: 0 22px
     input
       border: 1px solid #d2d2d2
       width: 100%
@@ -130,16 +86,12 @@ export default {
       max-height: 37px
       float: left
       color: #000
-      &:nth-child(2)
-        border-top: none
+      margin: 8px 0
       &:focus
         border-color: #5087EE
-        border-top: 1px solid #5087EE
       &::placeholder
         font-size: 14px
         color: #BDBDBD
-    .forget
-      float: right
     .showPassword
       position: absolute
       width: 17px
@@ -147,17 +99,20 @@ export default {
       background: url('~/assets/img/popup/showPass.svg') no-repeat
       background-size: 100%
       right: 30px
-      top: 138px
+      top: 164px
       cursor: pointer
     .submit
       width: 100%
       border-radius: 0
-      margin: 0
-      font-size: 20px
+      margin: 15px 0
+      font-size: 13px
+      line-height: 33px
       color: #ffffff
       background-color: #5087EE
       &:hover
         background-color: #4474CF
+  .forget
+    float: right
   .errorlog
     position: absolute
     font-size: 12px

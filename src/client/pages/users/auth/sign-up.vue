@@ -1,19 +1,37 @@
 <template>
-  <v-container>
-    <v-layout justify-center align-center>
-      <v-flex xs12 sm10 md8 lg6 xl6>
-        <h3>Sign Up</h3>
-        <sign-up-form :redirect="{ name: 'users-auth-sign-in' }"/>
-        <br>
-        <p>Already have an account? <nuxt-link :to="{ name: 'users-auth-sign-in' }">Sign in!</nuxt-link></p>
-      </v-flex>
-    </v-layout>
-  </v-container>
+  <div class="sign-container">
+    <div class="logo"></div>
+    <sign-up-form :redirect="redirect"/>
+  </div>
 </template>
 
 <script>
 import signUpForm from '~/components/auth/sign-up-form.vue'
 export default {
-  components: { signUpForm }
+  components: { signUpForm },
+  data() {
+    return {
+      redirect: { name: 'users-auth-sign-in' }
+    }
+  }
 }
 </script>
+
+<style lang="stylus" scoped>
+.sign-container
+  background: url('~/assets/img/auth_background.png') no-repeat
+  background-size: 100% 100%
+  width: 100vw
+  height: 100vh
+  margin-top: -42px
+  .logo
+    background: url('~/assets/img/logo_auth.png') no-repeat
+    background-size: 100% 100%
+    width: 74px
+    height: 108px
+    position: absolute
+    top: 80px
+    left: 0
+    right: 0
+    margin: auto
+</style>
