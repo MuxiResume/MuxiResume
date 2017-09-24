@@ -1,61 +1,50 @@
 <template>
   <div class="auth-container">
-    <div class="title">注册</div>        
-    <form @keyup.enter="submit">
-      <input
-        @keyup.native="checkEmail"
-        v-model="email"  
-        name="email"
-        label="Email"
-        type="email"
-        placeholder="登录邮箱: "
-        required
-      ></input>
-      <input
-        v-model="password"
-        ref="input"
-        name="password"
-        label="password"
-        type="password"
-        placeholder="密码(6~20位字母或数字): "
-        required
-      ></input>
-      <span class="showPassword" @click="togglePassword"></span>
-      <button @click.native="submit" class="submit">注册</button>
-      <router-link to="/users/auth/sign-in">登录</router-link>
-    </form>
+    <div class="title">注册</div> 
+    <validator name="validation">       
+      <form @keyup.enter="submit">
+        <input
+          @keyup.native="checkEmail"
+          v-model="email"  
+          name="email"
+          label="Email"
+          type="email"
+          placeholder="登录邮箱: "
+          required
+        ></input>
+        <input
+          v-model="password"
+          ref="input"
+          name="password"
+          label="password"
+          type="password"
+          placeholder="密码(6~20位字母或数字): "
+          required
+        ></input>
+        <span class="showPassword" @click="togglePassword"></span>
+        <button @click.native="submit" class="submit">注册</button>
+        <router-link to="/users/auth/sign-in">登录</router-link>
+      </form>
+      <div class="errors">
+        <validator-errors :validation="$validation"></validator-errors>
+      </div>
+    </validator>
   </div>
 </template>
 
 <script>
 import axios from '~/plugins/axios'
-import isEmail from 'validator/lib/isEmail'
-let usernameTimeout = null
 let emailTimeout = null
 
 export default {
   props: ['redirect'],
   data () {
     return {
-      username: '',
       email: '',
-      firstName: '',
-      lastName: '',
-      password1: '',
-      password2: '',
-      pw1: true,
-      pw2: true,
-      usernameExistsData: false,
-      emailExistsData: false,
+      password: '',
     }
   },
   computed: {
-    passwordsMatch() {
-      return this.password1 === this.password2 ? '' : 'Passwords don\'t match'
-    },
-    usernameExists() {
-      return this.usernameExistsData ? 'Username already exists.' : ''
-    },
     emailExists() {
       return this.emailExistsData ? 'User with that email already exists.' : ''
     },
@@ -64,22 +53,6 @@ export default {
     }
   },
   methods: {
-    checkUsername (e) {
-      clearTimeout(usernameTimeout)
-      usernameTimeout = setTimeout(() => {
-        let username = e.target.value
-        axios.get(`/users/check`, {
-          params: {
-            check: 'username',
-            data: username
-          }
-        }).then(data => {
-          this.usernameExistsData = data.data.exists
-        }).catch(error => {
-          console.error(error)
-        })
-      }, 500)
-    },
     checkEmail (e) {
       clearTimeout(emailTimeout)
       emailTimeout = setTimeout(() => {
@@ -98,12 +71,8 @@ export default {
     },
     submit () {
       this.$store.dispatch('user/signUp', {
-        username: this.username,
         email: this.email,
-        firstName: this.firstName,
-        lastName: this.lastName,
-        password1: this.password1,
-        password2: this.password2
+        password: this.password
       }).then(() => {
         if (this.$store.state.notification.success) this.$router.replace(this.redirect)
       })

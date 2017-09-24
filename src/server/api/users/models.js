@@ -3,12 +3,6 @@ import argon2 from 'argon2'
 import { ServerError } from '~middleware/express-server-error'
 
 const userSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    unique: true,
-    require: true,
-    minlength: 3
-  },
   email: {
     type: String,
     unique: true,
@@ -18,11 +12,6 @@ const userSchema = new mongoose.Schema({
     type: String,
     require: true,
     minlength: 5
-  },
-  admin: {
-    type: Boolean,
-    default: false,
-    require: true
   }
 }, {
   timestamps: true

@@ -27,16 +27,10 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'A online resume generation tool' }
     ]
   },
-  manifest: {
-    name: 'muxi-resume',
-    description: 'A Vueniverse project',
-    theme_color: '#188269'
+  loading: {
+    color: '#a6a6a6'
   },
-  modules: [
-    '@nuxtjs/pwa',
-    '@nuxtjs/component-cache'
-  ],
-  plugins: ['~plugins/vuetify.js'],
+  plugins: ['~plugins/vuetify.js', '~plugins/vue-validator.js'],
   render: {
     static: {
       maxAge: '1y',

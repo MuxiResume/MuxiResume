@@ -18,15 +18,11 @@ export const index = {
   },
   async post (req, res) {
     try {
-      let { username, email, firstName, lastName, password1, password2 } = req.body
-      if (password1 === password2) {
-        let password = await argon2.hash(password1)
-        let newUser = new User({ username, email, firstName, lastName, password })
-        let savedUser = await newUser.save()
-        res.json({ message: `Thanks for signing up, ${savedUser.username}!` })
-      } else {
-        throw new ServerError('Passwords don\'t match.', { status: 400 })
-      }
+      let { email, password } = req.body
+      password = await argon2.hash(password)
+      let newUser = new User({ email, password })
+      let savedUser = await newUser.save()
+      res.json({ message: `Thanks for signing up, ${savedUser.email}!` })
     } catch (error) {
       res.handleServerError(error)
     }

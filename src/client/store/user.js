@@ -5,9 +5,6 @@ export const state = () => {
   return {
     isAuthenticated: false,
     token: '',
-    username: '',
-    firstName: '',
-    lastName: '',
     email: '',
     admin: false
   }
@@ -31,12 +28,9 @@ export const mutations = {
   },
   SIGN_IN_SUCCESS (state, data) {
     if (process.browser) Cookies.set('token', `${data.token}`)
-    state.username = data.user.username
-    state.firstName = data.user.firstName
-    state.lastName = data.user.lastName
-    state.admin = data.user.admin
     state.email = data.user.email
     state.token = data.token
+    state.admin = data.user.admin
     state.isAuthenticated = true
     console.log('Sign In success!')
   },
@@ -52,9 +46,6 @@ export const mutations = {
     Cookies.remove('token')
     state.isAuthenticated = false
     state.token = ''
-    state.username = ''
-    state.firstName = ''
-    state.lastName = ''
     state.email = ''
     console.log('Sign out success!', message)
   },
