@@ -3,9 +3,6 @@ import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import express from 'express'
 import mongoose from 'mongoose'
-import { Nuxt, Builder } from 'nuxt'
-
-import config from '../../nuxt.config'
 import apiRoutes from './api'
 
 const app = express()
@@ -23,19 +20,6 @@ app.use(cookieParser())
 // Import API Routes
 app.use('/api', apiRoutes)
 
-config.dev = !(process.env.NODE_ENV === 'production')
-
-// Init Nuxt.js
-const nuxt = new Nuxt(config)
-
-// Build only in dev mode
-if (config.dev) {
-  const builder = new Builder(nuxt)
-  builder.build()
-}
-
-// Give nuxt middleware to express
-app.use(nuxt.render)
 
 // setup the database connection
 mongoose.Promise = global.Promise
