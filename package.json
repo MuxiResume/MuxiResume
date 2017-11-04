@@ -26,8 +26,6 @@
     "git-push": "git add . && git commit -m 'General Update' && git push -u origin master"
   },
   "dependencies": {
-    "@nuxtjs/component-cache": "^0.1.5",
-    "@nuxtjs/pwa": "^0.2.0",
     "argon2": "^0.16.1",
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
@@ -53,14 +51,13 @@
     "pm2": "^2.5.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-hot-loader": "^3.1.1",
     "slug": "^0.9.1",
     "source-map-support": "^0.4.15",
     "speakeasy": "^2.0.0",
     "uuid": "^3.0.1",
-    "vue-router": "^2.5.3",
-    "vue-validator": "^3.0.0-alpha.2",
-    "vuetify": "^0.12.7",
-    "vuex": "^2.3.1"
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
